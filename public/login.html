@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="/public/css/style.css" />
+  <link rel="icon" href="optimus2.png" type="image/png">
+</head>
+<body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector("form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const username = e.target.username.value;
+        const password = e.target.password.value;
+
+        const res = await fetch("/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ username, password }),
+        });
+
+        if (res.redirected) {
+          localStorage.setItem("username", username); // ✅ Store for dashboard
+          window.location.href = res.url;
+        } else {
+          const msg = await res.text();
+          alert(msg);
+        }
+      });
+    });
+  </script>
+
+  <nav>
+    <h1>NeoLearn</h1>
+    <div>
+      <a href="/signup">Sign Up</a>
+      <a href="/login">Login</a>
+    </div>
+  </nav>
+
+  <div class="form-container">
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+      <input name="username" type="text" required placeholder="Username" />
+      <input name="password" type="password" required placeholder="Password" />
+      <button type="submit">Login</button>
+    </form>
+    <a href="/signup">Don't have an account? Sign Up</a>
+  </div>
+</body>
+</html>

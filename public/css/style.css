@@ -1,0 +1,266 @@
+/* Futuristic Neon Theme */
+/* Global Reset & Responsive Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #00ffe0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+  }
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .course-card {
+    background: #1b1b1b;
+    border: 1px solid #00ffe055;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #00ffe033;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .course-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 18px #00ffe0;
+  }
+  
+  .course-card h3 {
+    margin: 0 0 0.5rem;
+    color: #00ffe0;
+  }
+  
+  .course-card p {
+    color: #ccc;
+  }
+  
+  nav {
+    width: 100%;
+    background: #121212;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 10px #00ffe0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 100;
+    box-sizing: border-box;
+  }
+  
+  nav h1 {
+    color: #00ffe0;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  nav div {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  nav a {
+    color: #00ffe0;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  nav a:hover {
+    color: #00c9a7;
+  }
+  
+  
+  body {
+    padding-top: 80px; /* Make space for fixed navbar */
+    overflow-x: hidden;
+  }
+  
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #00ffe0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  h2 {
+    text-shadow: 0 0 10px #00ffe0;
+    margin-bottom: 1rem;
+  }
+  
+  form {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #00ffe0;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 0 20px #00ffe066;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 90%;
+    max-width: 400px;
+  }  
+  
+  input {
+    padding: 0.6rem;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    background: #1e1e1e;
+    color: #00ffe0;
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 0.6rem;
+    background: #00ffe0;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background: #00c9a7;
+    box-shadow: 0 0 12px #00ffe0;
+  }
+  
+  a {
+    color: #00ffe0;
+    margin-top: 1rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #00c9a7;
+  }
+  .video-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto 2rem;
+    box-shadow: 0 0 20px #00ffe077;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+/* General Form Styling */
+.form-container {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #00ffe0;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 0 20px #00ffe066;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 90%;
+    max-width: 400px;
+    margin: 5rem auto;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  input {
+    padding: 0.8rem;
+    background: #1e1e1e;
+    border: none;
+    border-radius: 6px;
+    color: #00ffe0;
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 0.8rem;
+    background: #00ffe0;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background: #00c9a7;
+    box-shadow: 0 0 12px #00ffe0;
+  }
+  
+  a {
+    color: #00ffe0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  a:hover {
+    color: #00c9a7;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #00ffe0;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Make it responsive */
+  @media screen and (max-width: 600px) {
+    .form-container {
+      width: 80%;
+    }
+  
+    h2 {
+      font-size: 1.2rem;
+    }
+  
+    button, input {
+      font-size: 0.9rem;
+    }
+  }
+  

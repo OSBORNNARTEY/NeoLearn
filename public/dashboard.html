@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <link rel="icon" href="optimus2.png" type="image/png">
+  <link rel="stylesheet" href="/public/css/style.css" />
+  <style>
+    body {
+      background-color: #0d0f1a;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #111831;
+      box-shadow: 0 0 10px #00ffe5;
+    }
+
+    nav h1 {
+      color: #00ffe5;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #00ffe5;
+    }
+
+    .profile-box {
+      background: #111831;
+      border: 1px solid #00ffe5;
+      border-radius: 15px;
+      padding: 1.5rem 2rem;
+      margin: 2rem auto;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 255, 229, 0.3);
+      animation: fadeIn 0.7s ease-in-out;
+    }
+
+    .profile-box h3 {
+      color: #00ffe5;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .username {
+      font-size: 1.2rem;
+      color: #ffffffcc;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .course-card {
+      background: #1a1e33;
+      border: 1px solid #00ffe5;
+      padding: 1rem;
+      border-radius: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(0, 255, 229, 0.2);
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 255, 229, 0.4);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>NeoLearn</h1>
+    <div>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/public/login.html" onclick="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <!-- 🔷 Profile Section -->
+  <div class="profile-box">
+    <h3>User Profile</h3>
+    <p class="username">Welcome, <span id="usernameDisplay">User</span> 👋</p>
+  </div>
+
+  <h2 style="text-align: center;">My Courses</h2>
+  <div class="course-grid">
+    <div class="course-card" onclick="location.href='/public/course.html'">
+      <h3>Typing Tutorial</h3>
+      <p>Learn the basics of Typing.</p>
+    </div>
+    <div class="course-card" onclick="location.href='/public/course2.html'">
+      <h3>Spreadsheet Application</h3>
+      <p>Beginner-friendly course on Excel.</p>
+    </div>
+  </div>
+
+  <script>
+    const username = localStorage.getItem("username") || "User";
+    document.getElementById("usernameDisplay").textContent = username;
+
+    function logout() {
+      localStorage.removeItem("username");
+    }
+  </script>
+</body>
+</html>
